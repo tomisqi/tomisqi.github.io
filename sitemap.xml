@@ -1,1 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://tomisqi.github.io/</loc><lastmod>2020-04-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/posts/galacticrescuedemo/</loc><lastmod>2020-04-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/tags/game/</loc><lastmod>2020-04-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/posts/</loc><lastmod>2020-04-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/tags/</loc><lastmod>2020-04-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/tags/imgui/</loc><lastmod>2019-07-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/tags/nr/</loc><lastmod>2019-07-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/posts/pdcchvis/</loc><lastmod>2019-07-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/posts/titanproj/</loc><lastmod>2019-03-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/about/</loc><lastmod>2018-11-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/posts/freqass/</loc><lastmod>2018-11-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/projects/</loc><lastmod>2018-11-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/tags/telecom/</loc><lastmod>2018-11-01T00:00:00+00:00</lastmod></url><url><loc>https://tomisqi.github.io/categories/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://tomisqi.github.io/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/posts/galacticrescuedemo/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/tags/game/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/posts/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/tags/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/tags/imgui/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/tags/nr/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/posts/pdcchvis/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/posts/titanproj/</loc>
+    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/about/</loc>
+    <lastmod>2018-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/posts/freqass/</loc>
+    <lastmod>2018-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/projects/</loc>
+    <lastmod>2018-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/tags/telecom/</loc>
+    <lastmod>2018-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tomisqi.github.io/categories/</loc>
+  </url>
+</urlset>

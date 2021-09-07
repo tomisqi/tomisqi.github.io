@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>game on</title><link>https://tomisqi.github.io/tags/game/</link><description>Recent content in game on</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&amp;copy; Copyright notice</copyright><lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tomisqi.github.io/tags/game/index.xml" rel="self" type="application/rss+xml"/><item><title>Galactic Rescue Demo</title><link>https://tomisqi.github.io/posts/galacticrescuedemo/</link><pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate><guid>https://tomisqi.github.io/posts/galacticrescuedemo/</guid><description>Demo Out! This past December, we released the demo of our upcoming title Galactic Rescue!
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>game on </title>
+    <link>https://tomisqi.github.io/tags/game/</link>
+    <description>Recent content in game on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Copyright notice</copyright>
+    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tomisqi.github.io/tags/game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Galactic Rescue Demo</title>
+      <link>https://tomisqi.github.io/posts/galacticrescuedemo/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomisqi.github.io/posts/galacticrescuedemo/</guid>
+      <description>Demo Out! This past December, we released the demo of our upcoming title Galactic Rescue!
 The demo is a 1-hr Sci-Fi Metroidvania packed with secrets, exploration, challenging battles and environmental puzzles.
-You can read more about the game on [itch.io] (https://tmsigames.itch.io/galactic-rescue).</description></item><item><title>Titan project (Galactic Rescue)</title><link>https://tomisqi.github.io/posts/titanproj/</link><pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate><guid>https://tomisqi.github.io/posts/titanproj/</guid><description>In this post, I&amp;rsquo;ll give an overview of the video game project I embarked some time ago and that has taken much longer than originally intended :P .I&amp;rsquo;ll probably make this into its own tab later since there are lots to talk about in here!
-What is it? The game is a 2D metroidvania.If you are unfamiliar with that word, a quick internet search will give you an idea, but the gist of it is that the game is non-linear in its world design.</description></item></channel></rss>
+You can read more about the game on [itch.io] (https://tmsigames.itch.io/galactic-rescue).
+              </description>
+    </item>
+    
+    <item>
+      <title>Titan project (Galactic Rescue)</title>
+      <link>https://tomisqi.github.io/posts/titanproj/</link>
+      <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomisqi.github.io/posts/titanproj/</guid>
+      <description>In this post, I&amp;rsquo;ll give an overview of the video game project I embarked some time ago and that has taken much longer than originally intended :P .I&amp;rsquo;ll probably make this into its own tab later since there are lots to talk about in here!
+What is it? The game is a 2D metroidvania.If you are unfamiliar with that word, a quick internet search will give you an idea, but the gist of it is that the game is non-linear in its world design.</description>
+    </item>
+    
+  </channel>
+</rss>
