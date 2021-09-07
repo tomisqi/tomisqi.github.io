@@ -45,19 +45,19 @@
     
       
       <li class="p-menu__listitem">
-        <a href="/">Blog</a>
+        <a href="https://tomisqi.github.io/posts">Blog</a>
       </li>
       
     
       
       <li class="p-menu__listitem">
-        <a href="/projects">Projects</a>
+        <a href="https://tomisqi.github.io/projects">Projects</a>
       </li>
       
     
       
       <li class="p-menu__listitem">
-        <a href="/about">About</a>
+        <a href="https://tomisqi.github.io/about">About</a>
       </li>
       
     
@@ -155,12 +155,12 @@ This is similar to the size seen in this allocation type, so both allocation typ
 <p>If there are nominal RBG sizes, it is safe to assume that there will also be &ldquo;non-nominal&rdquo; RBG sizes. It turns out that &ldquo;non-nominal&rdquo; RBGs are RBGs whose size are smaller than the nominal ones.<!-- raw HTML omitted -->
 These RBGs are the first and last RBGs of the bandwidth part (BWP). Defined as follows in TS 38.214:</p>
 <ul>
-<li>the size of the first RBG is ![eq] (<a href="https://latex.codecogs.com/gif.latex?RBG_0%5E%7Bsize%7D&amp;space;=&amp;space;P&amp;space;-&amp;space;(bwpStart)&amp;space;mod&amp;space;P">https://latex.codecogs.com/gif.latex?RBG_0^{size}&amp;space;=&amp;space;P&amp;space;-&amp;space;(bwpStart)&amp;space;mod&amp;space;P</a>)</li>
+<li>the size of the first RBG is <img src="https://latex.codecogs.com/gif.latex?RBG_0%5E%7Bsize%7D&amp;space;=&amp;space;P&amp;space;-&amp;space;(bwpStart)&amp;space;mod&amp;space;P" alt="eq"></li>
 <li>the size of the last RBG is <img src="https://latex.codecogs.com/gif.latex?RBG_%7Blast%7D%5E%7Bsize%7D&amp;space;=&amp;space;(bwpStart&amp;space;+&amp;space;bwpSize)&amp;space;mod&amp;space;P" alt="eq"></li>
 </ul>
 <h5 id="why-these-non-nominal-rbg-sizes">Why these non-nominal RBG sizes?</h5>
 <p>I found that this comes from the fact that RBG boundaries are kept aligned regardless of a shift in the start of the BWP (bwpStart). The RBGs are defined for a zero-shifted bwpStart, and any RBGs that belong to a non-zero shifted bwpStart are aligned to the zero-shifted bwpStart.<!-- raw HTML omitted -->
-![image3] (/images/rbg.png)<!-- raw HTML omitted --></p>
+<img src="https://tomisqi.github.io/images/rbg.png" alt="image3"><!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
 <p>In the figure above, notice that for bwpStart=2, RBGs at both ends of the bandwidth part are smaller (shaded gray in the figure). These are two &ldquo;non-nominal&rdquo; RBG sizes. From the figure, it is clear that if alignment is to be kept, the RBGs at both ends of the BWP will have a different size - a non-nominal size - if the start of the BWP is shifted.</p>
 <h2 id="resource-allocation-type-1">Resource allocation type 1</h2>
@@ -170,21 +170,21 @@ for RBGs. Instead, the precise starting resource block and the number of contigu
 <h5 id="how-many-combinations-do-we-have-for-start-resource-block--number-of-resource-blocks-given-a-certain-bandwidth">How many combinations do we have for start resource block / number of resource blocks given a certain bandwidth?</h5>
 <p>To answer this question, I find it useful to think of a simple scenario. <!-- raw HTML omitted -->
 Suppose our bandwidth was equal to 4. If our start resource block is <em><strong>S</strong></em>, there are four such start resource blocks:<!-- raw HTML omitted -->
-![image1] (/images/allocType1_startRBs.png)
+<img src="https://tomisqi.github.io/images/allocType1_startRBs.png" alt="image1">
 For each of those start resource blocks <em><strong>S</strong></em>, we have a different number of resource blocks to use. This number is limited by the number of resource blocks ahead of the start resource block.<!-- raw HTML omitted -->
 If <em><strong>S</strong></em> = 0, there four different allocation sizes (shown leftmost in the image below). If <em><strong>S</strong></em> = 1, there are three different allocation sized and so on.
-![image2] (/images/allocType1.png)
+<img src="https://tomisqi.github.io/images/allocType1.png" alt="image2">
 As can be seen in the image, in total we have 1 + 2 + 3 + 4 different possible configurations for our frequency allocation.<!-- raw HTML omitted -->
 We can easily generalize this to say that given a bandwidth <em>B</em> there will be 1 + 2 + 3 &hellip; + (<em>B</em> - 1) + <em>B</em> possible different possible configurations.<!-- raw HTML omitted -->
 Using the sum of natural numbers, this is equivalent to</p>
-<p>![eq1] (<a href="https://latex.codecogs.com/gif.latex?%5Cfrac%7BB">https://latex.codecogs.com/gif.latex?%5Cfrac%7BB</a>*%28B+1%29%7D%7B2%7D)</p>
+<p><img src="https://latex.codecogs.com/gif.latex?%5Cfrac%7BB*%28B+1%29%7D%7B2%7D" alt="eq1"></p>
 <p>The above tells us how many combinations would be possible, but how many bits will we need in the DCI? <!-- raw HTML omitted -->
-We will need log2 number of bits (plus a ceil operator ![eq5] (<a href="https://latex.codecogs.com/gif.latex?%5Clceil%20.%20%5Crceil">https://latex.codecogs.com/gif.latex?%5Clceil%20.%20%5Crceil</a>) to get the next integer)</p>
-<p>![eq2] (<a href="https://latex.codecogs.com/gif.latex?%5Clceil%20log_2%7B%28%5Cfrac%7BB">https://latex.codecogs.com/gif.latex?%5Clceil%20log_2%7B%28%5Cfrac%7BB</a>*%28B+1%29%7D%7B2%7D%29%7D%20%5Crceil)</p>
+We will need log2 number of bits (plus a ceil operator <img src="https://latex.codecogs.com/gif.latex?%5Clceil%20.%20%5Crceil" alt="eq5"> to get the next integer)</p>
+<p><img src="https://latex.codecogs.com/gif.latex?%5Clceil%20log_2%7B%28%5Cfrac%7BB*%28B+1%29%7D%7B2%7D%29%7D%20%5Crceil" alt="eq2"></p>
 <p>This is analogous to the formula found in TS 38.212,</p>
-<p>![eq3] (<a href="https://latex.codecogs.com/gif.latex?%5Clceil%20log_2%20%7B%28%5Cfrac%7BN_%7BRB%7D%5E%7BDL%2CBWP%7D%20">https://latex.codecogs.com/gif.latex?%5Clceil%20log_2%20%7B%28%5Cfrac%7BN_%7BRB%7D%5E%7BDL%2CBWP%7D%20</a>*%20%28N_%7BRB%7D%5E%7BDL%2CBWP%7D%20+%201%29%7D%7B2%7D%29%7D%20%5Crceil)</p>
+<p><img src="https://latex.codecogs.com/gif.latex?%5Clceil%20log_2%20%7B%28%5Cfrac%7BN_%7BRB%7D%5E%7BDL%2CBWP%7D%20*%20%28N_%7BRB%7D%5E%7BDL%2CBWP%7D%20+%201%29%7D%7B2%7D%29%7D%20%5Crceil" alt="eq3"></p>
 <p>where,</p>
-<p>![eq4] (<a href="https://latex.codecogs.com/gif.latex?N_%7BRB%7D%5E%7BDL%2CBWP%7D">https://latex.codecogs.com/gif.latex?N_%7BRB%7D%5E%7BDL%2CBWP%7D</a>)
+<p><img src="https://latex.codecogs.com/gif.latex?N_%7BRB%7D%5E%7BDL%2CBWP%7D" alt="eq4">
 = The number of resource blocks in the bandwidth part</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted -->
 <!-- raw HTML omitted --></p>

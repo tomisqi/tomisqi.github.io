@@ -45,19 +45,19 @@
     
       
       <li class="p-menu__listitem">
-        <a href="/">Blog</a>
+        <a href="https://tomisqi.github.io/posts">Blog</a>
       </li>
       
     
       
       <li class="p-menu__listitem">
-        <a href="/projects">Projects</a>
+        <a href="https://tomisqi.github.io/projects">Projects</a>
       </li>
       
     
       
       <li class="p-menu__listitem">
-        <a href="/about">About</a>
+        <a href="https://tomisqi.github.io/about">About</a>
       </li>
       
     
@@ -102,7 +102,7 @@ There is support to visualize multiple UEs.
 <!-- raw HTML omitted --></p>
 <h2 id="windows">Windows</h2>
 <p>Here&rsquo;s a screenshot of how the program looks when you open it up.
-![image1] (/images/pdcchvis1.png)<!-- raw HTML omitted --></p>
+<img src="https://tomisqi.github.io/images/pdcchvis1.png" alt="image1"><!-- raw HTML omitted --></p>
 <p>There are four &ldquo;Windows&rdquo;:</p>
 <ol>
 <li>To the left, the &ldquo;Input&rdquo; window is used to change the PDCCH configuration.</li>
@@ -115,36 +115,36 @@ There is support to visualize multiple UEs.
 <p>The window to the leftmost can be used to change the PDCCH configuration.<!-- raw HTML omitted -->
 The fields in this window closely resemble those in the PDCCH configuration that is received in RRC message. If you know about PDCCH in NR, most of the fields will look familiar. Notice that you can add additional coresets and search spaces by increasing the &ldquo;No of&rdquo; fields.<!-- raw HTML omitted --></p>
 <p>See for example how changing the duration of the Coreset causes the gray area to expand.
-![image2] (/images/pdcchvis2.gif)<!-- raw HTML omitted --></p>
+<img src="https://tomisqi.github.io/images/pdcchvis2.gif" alt="image2"><!-- raw HTML omitted --></p>
 <p>It is also possible to add more Search Spaces and Coresets.<!-- raw HTML omitted -->
 In here, I add a new Search Space in the same Coreset (the new search space has different monitoring symbols).
-![image3] (/images/pdcchvis3.gif)<!-- raw HTML omitted --></p>
+<img src="https://tomisqi.github.io/images/pdcchvis3.gif" alt="image3"><!-- raw HTML omitted --></p>
 <h3 id="pdcch-candidates">PDCCH candidates</h3>
 <p>PDCCH candidates can be viewed by selecting &ldquo;Cand x&rdquo; from the UE window to the right.<!-- raw HTML omitted --></p>
 <p>See below how selecting &ldquo;Cand 0&rdquo;, shows where this PDCCH candidate is located in the time-frequency grid.<!-- raw HTML omitted -->
 Notice that 6 REGs turn red. This represents one CCE, and the color red is the color of our UE in the UE window.
 The number inside the red REGs is the CCE index.
-![image4] (/images/pdcchvis4.gif)<!-- raw HTML omitted --></p>
+<img src="https://tomisqi.github.io/images/pdcchvis4.gif" alt="image4"><!-- raw HTML omitted --></p>
 <p>If you prefer another color, this is how you change it.
-![image7] (/images/pdcchvis7.gif)<!-- raw HTML omitted --></p>
+<img src="https://tomisqi.github.io/images/pdcchvis7.gif" alt="image7"><!-- raw HTML omitted --></p>
 <p>If you would like to see other aggregation levels, you can do this in the UE window.
-![image5] (/images/pdcchvis5.gif)<!-- raw HTML omitted --></p>
+<img src="https://tomisqi.github.io/images/pdcchvis5.gif" alt="image5"><!-- raw HTML omitted --></p>
 <p>To add UEs, increase &ldquo;No of UEs&rdquo; in the UE window.<!-- raw HTML omitted -->
 Notice below that when expanding the UE1 tab, I select &ldquo;Cand 0&rdquo; for this new UE in order to see where it&rsquo;s located in the time-frequency grid.
-![image5] (/images/pdcchvis6.gif)<!-- raw HTML omitted --></p>
+<img src="https://tomisqi.github.io/images/pdcchvis6.gif" alt="image5"><!-- raw HTML omitted --></p>
 <p>By changing the slot, one can see how the location of the PDCCH candidates varies over time.
-![image8] (/images/pdcchvis8.gif)<!-- raw HTML omitted --></p>
+<img src="https://tomisqi.github.io/images/pdcchvis8.gif" alt="image8"><!-- raw HTML omitted --></p>
 <p>Eventually, when more than one UE is selected, the PDCCH candidates for each might overlap. When this happens, the color of the REG turns black.<!-- raw HTML omitted -->
 The &ldquo;Coreset&rdquo; window in the bottom-left shows the UEs whose PDCCH candidate uses a specific CCE index. This can be useful to see how many UEs are using each CCE index. <!-- raw HTML omitted -->
 Notice that in the time of overlap, for some CCE indexes the ueIdx = {0,1}. This means that the UEs with indexes 0 and 1 have PDCCH candidates on the same CCE.
-![image9] (/images/pdcchvis9.gif)<!-- raw HTML omitted --></p>
+<img src="https://tomisqi.github.io/images/pdcchvis9.gif" alt="image9"><!-- raw HTML omitted --></p>
 <h3 id="pdcch-interleaving">PDCCH Interleaving</h3>
 <p>CCE to REG interleaving can be visualized by enabling it the Coreset configuration (&ldquo;Input&rdquo; window). We can see how the different interleaving parameters change CCE positions in the time-frequency grid.</p>
 <p>Below you can see how interleaving is enabled.<!-- raw HTML omitted -->
 Notice that a drop-down can be clicked to change interleaving parameters as desired (if the interleaving parameters results in an invalid configuration, an error message will be displayed and interleaving is not applied).
-![image10] (/images/pdcchvis10.gif)<!-- raw HTML omitted --></p>
+<img src="https://tomisqi.github.io/images/pdcchvis10.gif" alt="image10"><!-- raw HTML omitted --></p>
 <p>In here, it is easy to see what effect is produced when changing the shift index.
-![image11] (/images/pdcchvis11.gif)<!-- raw HTML omitted --></p>
+<img src="https://tomisqi.github.io/images/pdcchvis11.gif" alt="image11"><!-- raw HTML omitted --></p>
 <h3 id="future-work">Future work</h3>
 <p>When I get some time I would like to add some new features and improvements in the tool.</p>
 <ol>
