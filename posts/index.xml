@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Antonio Fiallos on </title>
-    <link>https://tomisqi.github.io/</link>
-    <description>Recent content in Antonio Fiallos on </description>
+    <title>Posts on </title>
+    <link>https://tomisqi.github.io/posts/</link>
+    <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright notice</copyright>
-    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tomisqi.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title></title>
-      <link>https://tomisqi.github.io/about/</link>
-      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://tomisqi.github.io/about/</guid>
-      <description>Antonio Fiallos People also know as as Tony or Tomisqi. This is my home page.
-I work as a programmer.
-In here, I write about stuff.
-You can contact me via the Twitter.</description>
-    </item>
-    
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tomisqi.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Move to GitHub pages</title>
       <link>https://tomisqi.github.io/posts/movetogithub/</link>

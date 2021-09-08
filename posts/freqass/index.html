@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>Antonio Fiallos</title>
-  <meta property="og:title" content="Antonio Fiallos" />
-  <meta name="twitter:title" content="Antonio Fiallos" />
+  <title>Frequency resource allocation in 5G NR</title>
+  <meta property="og:title" content="Frequency resource allocation in 5G NR" />
+  <meta name="twitter:title" content="Frequency resource allocation in 5G NR" />
   
 
   
 
   <meta name="author" content=""/>
   <meta property="og:site_name" content="" />
-  <meta property="og:url" content="https://tomisqi.github.io/" />
+  <meta property="og:url" content="https://tomisqi.github.io/posts/freqass/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -24,13 +24,12 @@
   
 
   
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
+  
   
   
   <meta name="generator" content="Hugo 0.88.1" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
   <link rel="stylesheet" href="https://tomisqi.github.io//css/style.css" />
-  <link href="https://tomisqi.github.io/index.xml" rel="alternate" type="application/rss+xml" title="" />
-  
   <script type="text/javascript" src="https://tomisqi.github.io//js/bundle.js"></script>
   
 
@@ -61,43 +60,150 @@
 
 
     
-    <h1 class="c-title p-title"><a href="https://tomisqi.github.io/" class="p-title__link"></a></h1>
+    <p class="c-title p-title"><a href="https://tomisqi.github.io/" class="p-title__link"></a></p>
     
     
   </header>
   <main id="main" class="l-main">
 
 
-
-<article class="c-article p-list-article">
+<article class="p-article">
   <header>
-    <h2 class="c-title c-article__title"><a href="https://tomisqi.github.io/posts/">Posts</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2021-09-01T00:00:00Z">
-        Sep 1, 2021
-      </time>
-    </p>
+    <h1>Frequency resource allocation in 5G NR</h1>
+    <div>
+      <div class="c-time">
+        Posted on
+        <time datetime="2018-11-01T00:00:00Z">
+          Nov 1, 2018
+        </time>
+      </div>
+      
+      <a href="https://tomisqi.github.io/tags/nr" class="c-tag">nr</a>
+      
+      <a href="https://tomisqi.github.io/tags/telecom" class="c-tag">telecom</a>
+      
+    </div>
   </header>
-  <div class="c-article__summary">
-    
-  </div>
   
+  <section id="js-article" class="p-article__body">
+    <p>This post will be about some reflections I had when reading about the frequency resource allocation in 5G NR.
+I will specifically discuss frequency resource allocation on DL since this is the
+area I&rsquo;ve been reading about.</p>
+<p>In addition to giving a short description of resource allocation in 5G NR, I set out to answer the following questions:</p>
+<ol>
+<li>Why are the nominal resource block group (RBG) sizes the values they are?</li>
+<li>Why are the non-nominal RBG sizes the values they are?</li>
+<li>How can we reason about the different combinations that can be encoded in resource allocation type 1?</li>
+</ol>
+<p>If any of this sounds interesting, you might found the information below useful.</p>
+<h2 id="resource-allocation-types">Resource allocation types</h2>
+<p>In 5G NR, there are two ways to describe frequency resource allocation in DL. The &ldquo;frequency assignment&rdquo; is part of the DCI, and is how the network tells the terminal what frequency resources will be used for PDSCH. <br>
+There are two ways to describe frequency resource allocations:</p>
+<ol>
+<li>Resource allocation type 0</li>
+<li>Resource allocation type 1</li>
+</ol>
+<h2 id="resource-allocation-type-0">Resource allocation type 0</h2>
+<p>When using resource allocation type 0, the network tells the terminal the frequency resources to use by the way of a bitmap. <br>
+It is tempting to think that we could use 1 bit per resource block in the bitmap, but this approach doesn&rsquo;t scale well if we want to keep our control data overhead as small as possible. In 5G NR, there are a maximum of 275 resource blocks in DL, and allocating 1 bit per resource block would be costly.<br>
+Instead, a tradeoff is reached: the number of bits is limited so that the DCI can remain small, but allocation resolution is reduced since 1 bit is used to represent a group of resource blocks (RBG) instead of uniquely representing a resource block.</p>
+<p>The size of the RBG varies by bandwidth as described in TS 38.214</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Bandwidth Part Size</th>
+<th style="text-align:center">Configuration 1</th>
+<th style="text-align:center">Configuration 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1 – 36</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">37 - 72</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">73 - 144</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">16</td>
+</tr>
+<tr>
+<td style="text-align:center">145 - 275</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">16</td>
+</tr>
+</tbody>
+</table>
+<p>The values in the table represent the &ldquo;nominal&rdquo; size of the RBG (denoted <em>P</em>).</p>
+<h5 id="why-these-nominal-rbg-sizes">Why these nominal RBG sizes?</h5>
+<p>Something that jumps out from the table is that RBG sizes are proportional to the size of the bandwidth - i.e. RBG sizes get bigger as bandwidth gets bigger. This makes sense given that if we were to use say size=2 for all bandwidths, larger bandwidths will have proportionally high number of RBGs which will mean a higher number of bits in the DCI to describe the frequency allocation.<br>
+If we want to keep the number of RBGs constant regardless of bandwidth, the RBG size must get bigger as bandwidth increases. If you divide the max bandwidth size of each group in the table by the RBG size, you get exactly that: a constant number of RBGs - between 17-18 for Configuration 1. <br>
+I believe this number was chosen to be compatible with resource allocation type 1 which is described in the next section. Frequency allocation type 1 has a specific number of combinations that can be represented. This number turns out to be 16 for the maximum bandwidth part size. <br>
+This is similar to the size seen in this allocation type, so both allocation types use roughly the same number of bits in the DCI.</p>
+<h5 id="so-what-are-the-non-nominal-rbgs">So what are the &ldquo;non-nominal&rdquo; RBGs?</h5>
+<p>If there are nominal RBG sizes, it is safe to assume that there will also be &ldquo;non-nominal&rdquo; RBG sizes. It turns out that &ldquo;non-nominal&rdquo; RBGs are RBGs whose size are smaller than the nominal ones.<br>
+These RBGs are the first and last RBGs of the bandwidth part (BWP). Defined as follows in TS 38.214:</p>
+<ul>
+<li>the size of the first RBG is <img src="https://latex.codecogs.com/gif.latex?RBG_0%5E%7Bsize%7D&amp;space;=&amp;space;P&amp;space;-&amp;space;(bwpStart)&amp;space;mod&amp;space;P" alt="eq"></li>
+<li>the size of the last RBG is <img src="https://latex.codecogs.com/gif.latex?RBG_%7Blast%7D%5E%7Bsize%7D&amp;space;=&amp;space;(bwpStart&amp;space;+&amp;space;bwpSize)&amp;space;mod&amp;space;P" alt="eq"></li>
+</ul>
+<h5 id="why-these-non-nominal-rbg-sizes">Why these non-nominal RBG sizes?</h5>
+<p>I found that this comes from the fact that RBG boundaries are kept aligned regardless of a shift in the start of the BWP (bwpStart). The RBGs are defined for a zero-shifted bwpStart, and any RBGs that belong to a non-zero shifted bwpStart are aligned to the zero-shifted bwpStart.<br>
+<img src="https://tomisqi.github.io/images/rbg.png" alt="image3"><br></p>
+ <div style="text-align:center">(left) bwpStart=0 means RBGs are equal to the nominal RBG sizes, while (right) bwpStart=2 means RBGs at both ends are different </div>
+<p>In the figure above, notice that for bwpStart=2, RBGs at both ends of the bandwidth part are smaller (shaded gray in the figure). These are two &ldquo;non-nominal&rdquo; RBG sizes. From the figure, it is clear that if alignment is to be kept, the RBGs at both ends of the BWP will have a different size - a non-nominal size - if the start of the BWP is shifted.</p>
+<h2 id="resource-allocation-type-1">Resource allocation type 1</h2>
+<p>When using resource allocation type 1 the network tells the terminal a start frequency resource and a number of contiguous frequency resources to use. <br>
+This is different from type 0, wherein the terminal is given the resources to use by the way of a bitmap. Also different from type 0 is that in type 1, there is no longer a need
+for RBGs. Instead, the precise starting resource block and the number of contiguously allocated resource blocks is signaled in the DCI. Both pieces of data (start and number) are encoded in a value called resource indication value (RIV).</p>
+<h5 id="how-many-combinations-do-we-have-for-start-resource-block--number-of-resource-blocks-given-a-certain-bandwidth">How many combinations do we have for start resource block / number of resource blocks given a certain bandwidth?</h5>
+<p>To answer this question, I find it useful to think of a simple scenario. <br>
+Suppose our bandwidth was equal to 4. If our start resource block is <em><strong>S</strong></em>, there are four such start resource blocks:<br>
+<img src="https://tomisqi.github.io/images/allocType1_startRBs.png" alt="image1">
+For each of those start resource blocks <em><strong>S</strong></em>, we have a different number of resource blocks to use. This number is limited by the number of resource blocks ahead of the start resource block.<br>
+If <em><strong>S</strong></em> = 0, there four different allocation sizes (shown leftmost in the image below). If <em><strong>S</strong></em> = 1, there are three different allocation sized and so on.
+<img src="https://tomisqi.github.io/images/allocType1.png" alt="image2">
+As can be seen in the image, in total we have 1 + 2 + 3 + 4 different possible configurations for our frequency allocation.<br>
+We can easily generalize this to say that given a bandwidth <em>B</em> there will be 1 + 2 + 3 &hellip; + (<em>B</em> - 1) + <em>B</em> possible different possible configurations.<br>
+Using the sum of natural numbers, this is equivalent to</p>
+<p><img src="https://latex.codecogs.com/gif.latex?%5Cfrac%7BB*%28B+1%29%7D%7B2%7D" alt="eq1"></p>
+<p>The above tells us how many combinations would be possible, but how many bits will we need in the DCI? <br>
+We will need log2 number of bits (plus a ceil operator <img src="https://latex.codecogs.com/gif.latex?%5Clceil%20.%20%5Crceil" alt="eq5"> to get the next integer)</p>
+<p><img src="https://latex.codecogs.com/gif.latex?%5Clceil%20log_2%7B%28%5Cfrac%7BB*%28B+1%29%7D%7B2%7D%29%7D%20%5Crceil" alt="eq2"></p>
+<p>This is analogous to the formula found in TS 38.212,</p>
+<p><img src="https://latex.codecogs.com/gif.latex?%5Clceil%20log_2%20%7B%28%5Cfrac%7BN_%7BRB%7D%5E%7BDL%2CBWP%7D%20*%20%28N_%7BRB%7D%5E%7BDL%2CBWP%7D%20+%201%29%7D%7B2%7D%29%7D%20%5Crceil" alt="eq3"></p>
+<p>where,</p>
+<p><img src="https://latex.codecogs.com/gif.latex?N_%7BRB%7D%5E%7BDL%2CBWP%7D" alt="eq4">
+= The number of resource blocks in the bandwidth part</p>
+<p><br><br>
+<img src="https://tomisqi.github.io/images/black64x64.png" alt="fin" width="16" align="right"/></p>
+
+  </section>
+  <footer>
+    
+    <nav class="p-pagination c-pagination">
+      <div class="c-pagination__ctrl">
+        <div class="c-pagination__newer">
+          
+          
+        </div>
+        <div class="c-pagination__older">
+          
+          <a href="https://tomisqi.github.io/posts/titanproj/">Older</a>
+          
+        </div>
+      </div>
+    </nav>
+    
+
+
+  </footer>
 </article>
-
-
-<nav class="c-pagination p-pagination">
-  <div class="c-pagination__ctrl">
-    <div class="c-pagination__newer">
-      
-    </div>
-    <div class="c-pagination__older">
-      
-    </div>
-  </div>
-  <span class="c-pagination__count p-pagination__count">Page 1 of 1</span>
-</nav>
-
   </main>
   <footer class="l-footer">
     

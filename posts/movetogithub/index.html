@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>Antonio Fiallos</title>
-  <meta property="og:title" content="Antonio Fiallos" />
-  <meta name="twitter:title" content="Antonio Fiallos" />
+  <title>Move to GitHub pages</title>
+  <meta property="og:title" content="Move to GitHub pages" />
+  <meta name="twitter:title" content="Move to GitHub pages" />
   
 
   
 
   <meta name="author" content=""/>
   <meta property="og:site_name" content="" />
-  <meta property="og:url" content="https://tomisqi.github.io/" />
+  <meta property="og:url" content="https://tomisqi.github.io/posts/movetogithub/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -24,13 +24,12 @@
   
 
   
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
+  
   
   
   <meta name="generator" content="Hugo 0.88.1" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
   <link rel="stylesheet" href="https://tomisqi.github.io//css/style.css" />
-  <link href="https://tomisqi.github.io/index.xml" rel="alternate" type="application/rss+xml" title="" />
-  
   <script type="text/javascript" src="https://tomisqi.github.io//js/bundle.js"></script>
   
 
@@ -61,43 +60,80 @@
 
 
     
-    <h1 class="c-title p-title"><a href="https://tomisqi.github.io/" class="p-title__link"></a></h1>
+    <p class="c-title p-title"><a href="https://tomisqi.github.io/" class="p-title__link"></a></p>
     
     
   </header>
   <main id="main" class="l-main">
 
 
-
-<article class="c-article p-list-article">
+<article class="p-article">
   <header>
-    <h2 class="c-title c-article__title"><a href="https://tomisqi.github.io/posts/">Posts</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2021-09-01T00:00:00Z">
-        Sep 1, 2021
-      </time>
-    </p>
+    <h1>Move to GitHub pages</h1>
+    <div>
+      <div class="c-time">
+        Posted on
+        <time datetime="2021-09-01T00:00:00Z">
+          Sep 1, 2021
+        </time>
+      </div>
+      
+      <a href="https://tomisqi.github.io/tags/web" class="c-tag">web</a>
+      
+      <a href="https://tomisqi.github.io/tags/github" class="c-tag">github</a>
+      
+    </div>
   </header>
-  <div class="c-article__summary">
-    
-  </div>
   
+  <section id="js-article" class="p-article__body">
+    <h3 id="now-on-github-pages">Now on GitHub pages!</h3>
+<p>It took some work, but I now moved this site to GitHub pages. I am using an automated github action that builds and deploys the site.</p>
+<h3 id="two-repositories">Two repositories</h3>
+<p>I am using a <a href="https://github.com/tomisqi/tomisqi.github.io_source">source</a> repository to store the &ldquo;source&rdquo; of the website and a <a href="https://github.com/tomisqi/tomisqi.github.io">built site</a> repository to store the built site. When I do changes, I only push to the &ldquo;source&rdquo; repository and a github action takes care of building the site using <a href="https://gohugo.io/">Hugo</a> and pushing the built content into the &ldquo;built site&rdquo; repository.</p>
+<h3 id="problems">Problems</h3>
+<ul>
+<li>
+<p><strong>Problem</strong> I initially used a single repository, but Hugo places the built site in public/ which means that one had to go to site.github.io/public to access the front page. Also links in the site were broken.<br>
+<strong>Solution</strong>  As exaplained above, create two repositories: one in which the &ldquo;source&rdquo; is stored, and another one where the &ldquo;built site&rdquo; is stored.</p>
+</li>
+<li>
+<p><strong>Problem</strong> I had trouble making the github action run the deploy job based on the recommendation in <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">here</a>.<br>
+<strong>Solution</strong> I had to remove &ldquo;if: github.ref == &lsquo;refs/heads/main&rsquo;&rdquo; from the action. I also had to indicate that it should deploy to an external repository. See final <a href="https://github.com/tomisqi/tomisqi.github.io_source/blob/master/.github/workflows/gh-pages.yml">GitHub action</a>.</p>
+</li>
+<li>
+<p><strong>Problem</strong> I was getting an error in the GitHub action which said that it was not allowed to push to an external repository.<br>
+<strong>Solution</strong> As explained <a href="https://github.com/marketplace/actions/github-pages-action#%EF%B8%8F-deploy-to-external-repository-external_repository">here</a>, you need to use a personal token. But this was not straightfoward. I had to go to settings in the &ldquo;source&rdquo; repository and create a new secret called &ldquo;PERSONAL_TOKEN&rdquo; and paste the contents of the personal token in my GitHub Settings.</p>
+</li>
+<li>
+<p><strong>Problem</strong> Images in raw html where broken. Example <code>&lt;&quot;img src=&quot;images/image.png&quot;/&gt;</code> did not work any longer.<br>
+<strong>Solution</strong> This was not actually due to GitHub, but instead due to a new version of Hugo. I had to add the following to config.toml: <code>[markup.goldmark.renderer]unsafe= true</code></p>
+</li>
+</ul>
+<h3 id="moving-forward">Moving Forward</h3>
+<p>I plan to replace the current theme of this site with something new.</p>
+
+  </section>
+  <footer>
+    
+    <nav class="p-pagination c-pagination">
+      <div class="c-pagination__ctrl">
+        <div class="c-pagination__newer">
+          
+          <a href="https://tomisqi.github.io/posts/othergithubrepos/">Newer</a>
+          
+        </div>
+        <div class="c-pagination__older">
+          
+          <a href="https://tomisqi.github.io/about/">Older</a>
+          
+        </div>
+      </div>
+    </nav>
+    
+
+
+  </footer>
 </article>
-
-
-<nav class="c-pagination p-pagination">
-  <div class="c-pagination__ctrl">
-    <div class="c-pagination__newer">
-      
-    </div>
-    <div class="c-pagination__older">
-      
-    </div>
-  </div>
-  <span class="c-pagination__count p-pagination__count">Page 1 of 1</span>
-</nav>
-
   </main>
   <footer class="l-footer">
     

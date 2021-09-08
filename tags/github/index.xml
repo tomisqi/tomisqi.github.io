@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github on </title>
+    <link>https://tomisqi.github.io/tags/github/</link>
+    <description>Recent content in github on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Copyright notice</copyright>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tomisqi.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Move to GitHub pages</title>
+      <link>https://tomisqi.github.io/posts/movetogithub/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomisqi.github.io/posts/movetogithub/</guid>
+      <description>Now on GitHub pages! It took some work, but I now moved this site to GitHub pages. I am using an automated github action that builds and deploys the site.
+Two repositories I am using a source repository to store the &amp;ldquo;source&amp;rdquo; of the website and a built site repository to store the built site. When I do changes, I only push to the &amp;ldquo;source&amp;rdquo; repository and a github action takes care of building the site using Hugo and pushing the built content into the &amp;ldquo;built site&amp;rdquo; repository.</description>
+    </item>
+    
+    <item>
+      <title>Other GitHub repos</title>
+      <link>https://tomisqi.github.io/posts/othergithubrepos/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tomisqi.github.io/posts/othergithubrepos/</guid>
+      <description>I am removing the &amp;lsquo;Projects&amp;rsquo; tab since I don&amp;rsquo;t find it very useful at the moment. What I had in there were some projects that I have published on GitHub.
+Instead of having a separate tab, you can browse my repositories in here.</description>
+    </item>
+    
+  </channel>
+</rss>
